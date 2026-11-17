@@ -1,4 +1,4 @@
-name: Deploy MILO to Ukraine.com.ua (FTPS)
+name: Deploy MILO via SSH
 
 on:
   push:
@@ -12,41 +12,78 @@ permissions:
   contents: read
 
 concurrency:
-  group: milo-ftps-production
+  group: milo-ssh-deploy
   cancel-in-progress: false
 
 jobs:
   deploy:
+    name: Deploy static site to Ukraine.com.ua
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      MILO_SSH_HOST: ${{ secrets.MILO_SSH_HOST }}
+      MILO_SSH_USER: ${{ secrets.MILO_SSH_USER }}
+      MILO_SSH_PORT: ${{ secrets.MILO_SSH_PORT }}
+      MILO_SSH_PRIVATE_KEY: ${{ secrets.MILO_SSH_PRIVATE_KEY }}
+      MILO_SSH_KNOWN_HOSTS: ${{ secrets.MILO_SSH_KNOWN_HOSTS }}
+      MILO_DEPLOY_PATH: ${{ secrets.MILO_DEPLOY_PATH }}
+
     steps:
-      - name: Checkout source
+      - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Check deployment configuration
-        env:
-          MILO_FTP_HOST: ${{ secrets.MILO_FTP_HOST }}
-          MILO_FTP_USER: ${{ secrets.MILO_FTP_USER }}
-          MILO_FTP_PASSWORD: ${{ secrets.MILO_FTP_PASSWORD }}
+      - name: Verify deployment configuration
         shell: bash
         run: |
-          if [[ -z "$MILO_FTP_HOST" || -z "$MILO_FTP_USER" || -z "$MILO_FTP_PASSWORD" ]]; then
-            echo "::error::Set MILO_FTP_HOST, MILO_FTP_USER and MILO_FTP_PASSWORD as GitHub Actions repository secrets."
+          set -euo pipefail
+          for variable in MILO_SSH_HOST MILO_SSH_USER MILO_SSH_PRIVATE_KEY MILO_SSH_KNOWN_HOSTS MILO_DEPLOY_PATH; do
+            if [[ -z "${!variable}" ]]; then
+              echo "::error::Required GitHub Actions secret ${variable} is not configured."
+              exit 1
+            fi
+          done
+          if [[ -z "${MILO_SSH_PORT}" ]]; then
+            echo "MILO_SSH_PORT=22" >> "$GITHUB_ENV"
+          elif [[ ! "${MILO_SSH_PORT}" =~ ^[0-9]{1,5}$ ]]; then
+            echo "::error::MILO_SSH_PORT must be numeric"
             exit 1
           fi
+          if [[ ! "${MILO_DEPLOY_PATH}" =~ ^/[a-zA-Z0-9_./-]+$ ||
+                "${MILO_DEPLOY_PATH}" == "/" ||
+                "${MILO_DEPLOY_PATH}" == *"/../"* ||
+                "${MILO_DEPLOY_PATH}" == *"/.." ]]; then
+            echo "::error::MILO_DEPLOY_PATH must be a safe absolute website directory path."
+            exit 1
+          fi
+          test -s site/index.html
 
-      - name: Upload public site only via encrypted FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
-        with:
-          server: ${{ secrets.MILO_FTP_HOST }}
-          username: ${{ secrets.MILO_FTP_USER }}
-          password: ${{ secrets.MILO_FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          local-dir: ./site/
-          server-dir: ./
-          dangerous-clean-slate: false
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+      - name: Configure SSH securely
+        shell: bash
+        run: |
+          set -euo pipefail
+          umask 077
+          mkdir -p "$HOME/.ssh"
+          printf '%s\n' "$MILO_SSH_PRIVATE_KEY" > "$HOME/.ssh/milo-deploy"
+          printf '%s\n' "$MILO_SSH_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/milo-deploy" "$HOME/.ssh/known_hosts"
+          ssh-keygen -y -f "$HOME/.ssh/milo-deploy" > /dev/null
+
+      - name: Ensure destination already exists and is writable
+        shell: bash
+        run: |
+          set -euo pipefail
+          ssh -p "$MILO_SSH_PORT" \
+            -i "$HOME/.ssh/milo-deploy" \
+            -o BatchMode=yes \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            "$MILO_SSH_USER@$MILO_SSH_HOST" \
+            "test -d '$MILO_DEPLOY_PATH' && test -w '$MILO_DEPLOY_PATH'"
+
+      - name: Sync public website files only
+        shell: bash
+        run: |
+          set -euo pipefail
+          rsync -az --no-perms --no-owner --no-group \
+            -e "ssh -p $MILO_SSH_PORT -i $HOME/.ssh/milo-deploy -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
+            site/ "$MILO_SSH_USER@$MILO_SSH_HOST:$MILO_DEPLOY_PATH/"
