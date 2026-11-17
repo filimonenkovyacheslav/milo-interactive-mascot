@@ -1,25 +1,46 @@
-# Portfolio description / Описание для портфолио
+# MILO — Portfolio descriptions
 
-## English
+**Live demo:** https://milo-interactive-mascot.free-logistic-helper.com/#playground  
+**GitHub:** https://github.com/filimonenkovyacheslav/milo-interactive-mascot
 
-**MILO — Interactive Mascot & Dictionary UI Demo**
+## Русский — Freelancehunt
 
-A responsive, event-driven frontend demonstration with animated SVG mascots reacting to user actions. Features a bilingual UI, three interchangeable character styles, five application states (idle, loading, success, empty, error), click/tap reactions with speech bubbles, and a live event monitor.
+**Название:** MILO — интерактивные SVG-маскоты и анимация интерфейса
 
-**Stack:** HTML5, CSS3, Vanilla JavaScript, SVG, MIT-licensed Lively Mascot.
+**Описание:**
 
-**My contribution:** Responsive layout, state management, mini dictionary simulation, accessible user interactions, graceful fallbacks and integration of third-party open-source animation assets.
+Разработал адаптивную frontend-демонстрацию интерактивных персонажей для образовательных и веб-сервисов. Маскоты реагируют на действия пользователя и состояния интерфейса: ожидание, поиск, успешный результат, отсутствие совпадений и ошибка.
 
-**Note:** Portfolio prototype. The mini dictionary and network error are simulated; there is no live translation backend.
+Реализовал переключение персонажей, клики и тач-события с реакциями и текстовыми репликами, мини-словарь с имитацией асинхронного поиска, переключение RU/EN, плавные UI-переходы и резервную SVG-анимацию.
 
-## Русский
+**Технологии:** HTML5, CSS3, JavaScript, SVG, Lively Mascot (MIT), GitHub Actions, SSH/rsync.
 
-**MILO — Интерактивный маскот и интерфейс мини-словаря**
+**Демонстрация:** https://milo-interactive-mascot.free-logistic-helper.com/#playground
 
-Адаптивная frontend-демонстрация с SVG-персонажами, реагирующими на действия пользователя. Реализованы русский/английский интерфейс, три варианта персонажа, пять состояний (ожидание, поиск, успех, нет результата, ошибка), реакции на клики и нажатия с текстовыми репликами, а также журнал событий.
+**Исходники:** https://github.com/filimonenkovyacheslav/milo-interactive-mascot
 
-**Технологии:** HTML5, CSS3, JavaScript, SVG, библиотека Lively Mascot (MIT).
+*Это самостоятельный портфельный прототип: данные словаря и ошибки имитируются на frontend; готовая open-source библиотека анимаций используется с сохранением лицензии.*
 
-**Что реализовано:** Интерфейс и адаптивная верстка, логика управления состояниями, имитация поиска по словарю, интеграция готовых анимационных ассетов, резервный SVG-рендеринг.
+## English — Upwork / GitHub
 
-**Примечание:** Это самостоятельный учебно-портфельный прототип. Поиск работает на локальных демонстрационных данных, API переводчика не подключён.
+**Title:** MILO — Interactive SVG Mascot & Animated UI
+
+**Description:**
+
+Built a responsive frontend demo featuring animated mascot characters that react to user events and app states: idle, searching, success, empty results, and errors.
+
+Implemented character switching, click/touch reactions with speech bubbles, a simulated asynchronous dictionary lookup, EN/RU language switching, smooth transitions, and an SVG fallback when third-party assets are unavailable.
+
+**Stack:** HTML5, CSS3, vanilla JavaScript, SVG, MIT-licensed Lively Mascot, GitHub Actions, SSH/rsync deployment.
+
+**Live demo:** https://milo-interactive-mascot.free-logistic-helper.com/#playground
+
+**Source:** https://github.com/filimonenkovyacheslav/milo-interactive-mascot
+
+*Independent portfolio prototype. Dictionary responses and error scenarios are simulated locally; animations use a credited open-source library.*
+
+## Short reference for a proposal
+
+**RU:** Пример интерактивной анимации: [MILO](https://milo-interactive-mascot.free-logistic-helper.com/#playground) — интеграция готовых SVG-маскотов с реакциями на поиск, клики, ошибки и пустые результаты. [GitHub](https://github.com/filimonenkovyacheslav/milo-interactive-mascot).
+
+**EN:** [MILO demo](https://milo-interactive-mascot.free-logistic-helper.com/#playground) — interactive SVG mascots reacting to search, clicks, errors and empty states. [GitHub](https://github.com/filimonenkovyacheslav/milo-interactive-mascot).
