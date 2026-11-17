@@ -26,7 +26,7 @@ jobs:
       MILO_SSH_PORT: ${{ secrets.MILO_SSH_PORT }}
       MILO_SSH_PRIVATE_KEY: ${{ secrets.MILO_SSH_PRIVATE_KEY }}
       MILO_SSH_KNOWN_HOSTS: ${{ secrets.MILO_SSH_KNOWN_HOSTS }}
-      MILO_DEPLOY_PATH: ${{ secrets.MILO_DEPLOY_PATH }}
+      MILO_DEPLOY_PATH: /home/fl523534/free-logistic-helper.com/milo-interactive-mascot
 
     steps:
       - name: Check out repository
@@ -36,7 +36,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for variable in MILO_SSH_HOST MILO_SSH_USER MILO_SSH_PRIVATE_KEY MILO_SSH_KNOWN_HOSTS MILO_DEPLOY_PATH; do
+          for variable in MILO_SSH_HOST MILO_SSH_USER MILO_SSH_PRIVATE_KEY MILO_SSH_KNOWN_HOSTS; do
             if [[ -z "${!variable}" ]]; then
               echo "::error::Required GitHub Actions secret ${variable} is not configured."
               exit 1
