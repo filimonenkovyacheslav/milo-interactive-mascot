@@ -4,6 +4,13 @@
 
 **🌐 [Live Demo — HTTPS](https://milo-interactive-mascot.free-logistic-helper.com/#playground)** · **[Source code](https://github.com/filimonenkovyacheslav/milo-interactive-mascot)**
 
+## Screenshots
+
+| Desktop | Mobile |
+|:---:|:---:|
+| <img src="screenshots/desktop.jpg" alt="MILO interactive mascot desktop screenshot" width="600"> | <img src="screenshots/mobile.jpg" alt="MILO interactive mascot mobile screenshot" width="250"> |
+
+
 ## Overview
 
 MILO shows how animated characters can respond to real interface events rather than play a decorative loop. It combines a small client-side dictionary, interactive character reactions, and smooth user-feedback states.
