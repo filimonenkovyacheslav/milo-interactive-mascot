@@ -1,0 +1,52 @@
+name: Deploy MILO to Ukraine.com.ua (FTPS)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: milo-ftps-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Check deployment configuration
+        env:
+          MILO_FTP_HOST: ${{ secrets.MILO_FTP_HOST }}
+          MILO_FTP_USER: ${{ secrets.MILO_FTP_USER }}
+          MILO_FTP_PASSWORD: ${{ secrets.MILO_FTP_PASSWORD }}
+        shell: bash
+        run: |
+          if [[ -z "$MILO_FTP_HOST" || -z "$MILO_FTP_USER" || -z "$MILO_FTP_PASSWORD" ]]; then
+            echo "::error::Set MILO_FTP_HOST, MILO_FTP_USER and MILO_FTP_PASSWORD as GitHub Actions repository secrets."
+            exit 1
+          fi
+
+      - name: Upload public site only via encrypted FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.MILO_FTP_HOST }}
+          username: ${{ secrets.MILO_FTP_USER }}
+          password: ${{ secrets.MILO_FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./site/
+          server-dir: ./
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
