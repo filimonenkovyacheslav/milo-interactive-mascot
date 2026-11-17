@@ -10,7 +10,7 @@ Ukraine.com.ua normally uses `~/parent-domain/subdomain-name` for subdomains, wh
 ~/free-logistic-helper.com/milo-interactive-mascot
 ```
 
-But this can differ when the site's root folder has been manually changed. Open WebSSH for the **subdomain** in the hosting control panel, or connect via SSH, then run:
+Confirmed actual folder on the hosting account: `/home/fl523534/free-logistic-helper.com/milo-interactive-mascot`. Check the hosting panel if the document root is changed in future. Open WebSSH for the **subdomain** in the hosting control panel, or connect via SSH, then run:
 
 ```bash
 pwd -P
@@ -49,7 +49,7 @@ cat ~/.ssh/milo_github_actions.pub
 
 Add the PUBLIC key to the hosting account using Ukraine.com.ua's SSH key management. Save the PRIVATE key contents, locally, as the GitHub Actions secret `MILO_SSH_PRIVATE_KEY`. **Never post either private key or password in chat.**
 
-Set these **GitHub repository secrets** under Settings → Secrets and variables → Actions:
+The destination root `/home/fl523534/free-logistic-helper.com/milo-interactive-mascot` is configured in the workflow. Set these **GitHub repository secrets** under Settings → Secrets and variables → Actions:
 
 | Secret | Meaning |
 | --- | --- |
@@ -58,7 +58,6 @@ Set these **GitHub repository secrets** under Settings → Secrets and variables
 | `MILO_SSH_PORT` | Usually 22 (optional) |
 | `MILO_SSH_PRIVATE_KEY` | Dedicated deploy key's private half |
 | `MILO_SSH_KNOWN_HOSTS` | SSH host-key entry verified against a trusted fingerprint |
-| `MILO_DEPLOY_PATH` | Absolute document root path (from `pwd -P`) |
 
 To obtain a proposed host-key entry on your Mac, `ssh-keyscan -p 22 YOUR_SSH_HOST`; verify the fingerprint against the one presented during your trusted SSH connection before using it. GitHub workflow uses strict host-key checking.
 
