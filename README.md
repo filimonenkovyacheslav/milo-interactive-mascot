@@ -30,7 +30,7 @@ Public demo: http://milo-interactive-mascot.free-logistic-helper.com/
 
 The workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) copies only the static `site/` directory to the hosting web root over SSH using `rsync`. It does **not** use FTP, does **not** copy the repository or `.git` into the website, and does **not** delete unrelated server files.
 
-The repository administrator must configure these **GitHub Actions repository secrets** under Settings → Secrets and variables → Actions:
+The document root is already fixed in the workflow as `/home/fl523534/free-logistic-helper.com/milo-interactive-mascot` (confirmed over SSH). The repository administrator must configure these **GitHub Actions repository secrets** under Settings → Secrets and variables → Actions:
 
 | Secret | Value |
 | --- | --- |
@@ -39,9 +39,8 @@ The repository administrator must configure these **GitHub Actions repository se
 | `MILO_SSH_PORT` | SSH port, usually `22`; optional |
 | `MILO_SSH_PRIVATE_KEY` | Contents of a **dedicated** private SSH key used exclusively for this deployment |
 | `MILO_SSH_KNOWN_HOSTS` | Verified SSH host-key entry for `MILO_SSH_HOST` |
-| `MILO_DEPLOY_PATH` | Existing **absolute** path to the subdomain's document root |
 
-For this subdomain, Ukraine.com's default path is usually `~/free-logistic-helper.com/milo-interactive-mascot`; verify the real absolute path using SSH `pwd -P` and the hosting panel before using it. The workflow fails if the folder does not exist or is not writable.
+Confirmed SSH document root: `/home/fl523534/free-logistic-helper.com/milo-interactive-mascot`. The workflow fails if the folder does not exist or is not writable.
 
 ### Create a dedicated deploy key
 
