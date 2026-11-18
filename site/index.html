@@ -24,9 +24,10 @@
     <nav class="nav-actions" aria-label="Main navigation">
       <a href="#how" class="nav-link" data-i18n="howNav">How it works</a>
       <a href="#credits" class="nav-link" data-i18n="creditsNav">Credits</a>
-      <div class="language-switch" role="group" aria-label="Interface language">
-        <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+      <div class="language-switch" role="group" aria-label="Interface language" data-i18n-aria="languageAria">
+        <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true" title="English">EN</button>
+        <button type="button" class="lang-btn" data-lang="uk" aria-pressed="false" title="Українська">UA</button>
+        <button type="button" class="lang-btn" data-lang="ru" aria-pressed="false" title="Русский">RU</button>
       </div>
     </nav>
   </header>
@@ -47,7 +48,7 @@
           <div class="metric"><strong>100%</strong><span data-i18n="metricBrowser">browser-powered</span></div>
         </div>
       </div>
-      <div class="hero-sticker" aria-hidden="true"><div class="sticker-circle">✦</div><span>DESIGNED TO<br>FEEL ALIVE</span></div>
+      <div class="hero-sticker" aria-hidden="true"><div class="sticker-circle">✦</div><span data-i18n="stickerTitle">DESIGNED TO<br>FEEL ALIVE</span></div>
     </section>
 
     <section class="demo-section shell" id="playground" aria-label="Interactive mascot playground">
@@ -65,7 +66,7 @@
             <span class="float-doodle doodle-a" aria-hidden="true">✳</span><span class="float-doodle doodle-b" aria-hidden="true">+</span><span class="float-doodle doodle-c" aria-hidden="true">✦</span>
             <div class="speech-bubble" id="speechBubble" role="status" aria-live="polite"><span id="speechText">Hey there! Ready to explore?</span><span class="bubble-tail" aria-hidden="true"></span></div>
             <div class="mascot-wrap" id="mascotWrap">
-              <button class="fallback-mascot avatar--sprout" id="fallbackMascot" type="button" aria-label="Interact with mascot" title="Click me!">
+              <button class="fallback-mascot avatar--sprout" id="fallbackMascot" type="button" aria-label="Interact with mascot" title="Click me!" data-i18n-aria="interactAria" data-i18n-title="interactTitle">
                 <svg viewBox="0 0 300 310" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <defs><linearGradient id="headGrad" x1=".15" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#d2fff0"/><stop offset="1" stop-color="#83e7d4"/></linearGradient><linearGradient id="robotGrad" x1=".15" y1="0" x2=".85" y2="1"><stop offset="0" stop-color="#e9cafe"/><stop offset="1" stop-color="#b9a5fd"/></linearGradient><filter id="softShadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="12" stdDeviation="9" flood-color="#5c4c92" flood-opacity=".13"/></filter></defs>
                   <ellipse cx="150" cy="282" rx="78" ry="13" fill="#887fc1" opacity=".12" class="avatar-shadow"/>
@@ -83,7 +84,7 @@
             <span class="stage-hint" data-i18n="stageHint">↑ tap the character for a surprise</span>
             <div class="stage-ground" aria-hidden="true"></div>
           </div>
-          <div class="character-toolbar"><span class="tool-label" data-i18n="chooseCharacter">CHOOSE A CHARACTER</span><div class="character-choices" role="group" aria-label="Character selection"><button class="character-choice is-active" type="button" data-character="sprout" aria-pressed="true"><span>🌱</span> Sprout</button><button class="character-choice" type="button" data-character="robot" aria-pressed="false"><span>🤖</span> Robot</button><button class="character-choice" type="button" data-character="cat" aria-pressed="false"><span>🐱</span> Cat</button></div></div>
+          <div class="character-toolbar"><span class="tool-label" data-i18n="chooseCharacter">CHOOSE A CHARACTER</span><div class="character-choices" role="group" aria-label="Character selection"><button class="character-choice is-active" type="button" data-character="sprout" aria-pressed="true"><span>🌱</span> <b data-i18n="characterSprout">Sprout</b></button><button class="character-choice" type="button" data-character="robot" aria-pressed="false"><span>🤖</span> <b data-i18n="characterRobot">Robot</b></button><button class="character-choice" type="button" data-character="cat" aria-pressed="false"><span>🐱</span> <b data-i18n="characterCat">Cat</b></button></div></div>
         </div>
 
         <div class="controls-panel">
@@ -94,13 +95,13 @@
           <div class="controls-divider"></div>
           <div class="state-header"><label data-i18n="triggerLabel">TRIGGER A STATE</label><span data-i18n="instantPreview">instant preview</span></div>
           <div class="state-buttons" role="group" aria-label="Animation states"><button type="button" class="state-button is-active" data-state="idle"><span>◌</span><b>Idle</b></button><button type="button" class="state-button" data-state="searching"><span>◔</span><b>Thinking</b></button><button type="button" class="state-button" data-state="success"><span>✦</span><b>Happy</b></button><button type="button" class="state-button" data-state="empty"><span>◕</span><b>Confused</b></button><button type="button" class="state-button" data-state="error"><span>!</span><b>Oops!</b></button></div>
-          <div class="debug-bar"><div class="debug-left"><span class="debug-icon">{ }</span><div><strong data-i18n="eventMonitor">Event monitor</strong><p id="eventMonitorText">mascot.setEmotion('idle')</p></div></div><button type="button" class="reset-button" id="resetBtn" aria-label="Reset demo" title="Reset demo">↺</button></div>
+          <div class="debug-bar"><div class="debug-left"><span class="debug-icon">{ }</span><div><strong data-i18n="eventMonitor">Event monitor</strong><p id="eventMonitorText">mascot.setEmotion('idle')</p></div></div><button type="button" class="reset-button" id="resetBtn" aria-label="Reset demo" title="Reset demo" data-i18n-aria="resetText" data-i18n-title="resetText">↺</button></div>
         </div>
       </div>
     </section>
 
     <section class="how-section shell" id="how"><div class="how-header"><div><span class="tiny-caps" data-i18n="behindScenes">BEHIND THE SCENES</span><h2 data-i18n="howTitle">Small details. <em>Real delight.</em></h2></div><p data-i18n="howSubtitle">A tiny, production-minded demo of event-driven character animation.</p></div><div class="feature-grid"><article class="feature-card"><div class="feature-number">01 /</div><div class="feature-symbol">⌨</div><h3 data-i18n="feature1title">Type a word</h3><p data-i18n="feature1text">Debounced-feeling search with loading, success, empty, and simulated error paths.</p></article><article class="feature-card"><div class="feature-number">02 /</div><div class="feature-symbol">☺</div><h3 data-i18n="feature2title">Watch it react</h3><p data-i18n="feature2text">A character's emotion follows interface state — with no full-page reloads.</p></article><article class="feature-card"><div class="feature-number">03 /</div><div class="feature-symbol">↝</div><h3 data-i18n="feature3title">Make it yours</h3><p data-i18n="feature3text">Switch characters, click for reactions, or call state changes directly from JavaScript.</p></article></div></section>
-    <section class="credit-section shell" id="credits"><div class="credit-text"><span class="tiny-caps" data-i18n="creditOverline">OPEN SOURCE, CLEAR LICENSE</span><h2 data-i18n="creditsTitle">Built with care.<br>Shared with credit.</h2><p data-i18n="creditsDescription">The live animated mascot assets use the MIT-licensed Lively Mascot project. The page, interaction flow, dictionary simulation, and fallback artwork are original demo work.</p><a href="https://github.com/jingluoguo/lively-mascot" rel="noopener noreferrer" target="_blank" data-i18n="viewLibrary">View mascot library ↗</a></div><div class="credit-stamp" aria-label="MIT licensed assets"><span>MADE WITH</span><strong>♥</strong><span>+ OPEN SOURCE</span></div></section>
+    <section class="credit-section shell" id="credits"><div class="credit-text"><span class="tiny-caps" data-i18n="creditOverline">OPEN SOURCE, CLEAR LICENSE</span><h2 data-i18n="creditsTitle">Built with care.<br>Shared with credit.</h2><p data-i18n="creditsDescription">The live animated mascot assets use the MIT-licensed Lively Mascot project. The page, interaction flow, dictionary simulation, and fallback artwork are original demo work.</p><a href="https://github.com/jingluoguo/lively-mascot" rel="noopener noreferrer" target="_blank" data-i18n="viewLibrary">View mascot library ↗</a></div><div class="credit-stamp" aria-label="MIT licensed assets"><span data-i18n="stampMadeWith">MADE WITH</span><strong>♥</strong><span data-i18n="stampOpenSource">+ OPEN SOURCE</span></div></section>
   </main>
   <footer class="site-footer shell"><div class="footer-brand">MILO<span>.</span> <small data-i18n="footerLabel">Interactive Mascot Demo</small></div><div data-i18n="footerInfo">A standalone portfolio concept · Vanilla JavaScript · SVG animation</div><a href="#top" data-i18n="backTop">Back to top ↑</a></footer>
 </body>
