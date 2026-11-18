@@ -11,7 +11,7 @@
 
 Розробив адаптивну frontend-демонстрацію інтерактивних персонажів для освітніх платформ і вебсервісів. Маскоти реагують на дії користувача та стани інтерфейсу: очікування, пошук, успішний результат, відсутність збігів і помилку.
 
-Реалізував перемикання персонажів, реакції на кліки й дотики з текстовими репліками, мінісловник з імітацією асинхронного пошуку, перемикання мови інтерфейсу EN/RU, плавні UI-переходи та резервну SVG-анімацію.
+Реалізував перемикання персонажів, реакції на кліки й дотики з текстовими репліками, мінісловник з імітацією асинхронного пошуку, перемикання мови інтерфейсу EN/UA/RU, плавні UI-переходи та резервну SVG-анімацію.
 
 **Технології:** HTML5, CSS3, JavaScript, SVG, Lively Mascot (MIT), GitHub Actions, SSH/rsync.
 
@@ -29,7 +29,7 @@
 
 Разработал адаптивную frontend-демонстрацию интерактивных персонажей для образовательных и веб-сервисов. Маскоты реагируют на действия пользователя и состояния интерфейса: ожидание, поиск, успешный результат, отсутствие совпадений и ошибка.
 
-Реализовал переключение персонажей, клики и тач-события с реакциями и текстовыми репликами, мини-словарь с имитацией асинхронного поиска, переключение RU/EN, плавные UI-переходы и резервную SVG-анимацию.
+Реализовал переключение персонажей, клики и тач-события с реакциями и текстовыми репликами, мини-словарь с имитацией асинхронного поиска, переключение EN/UA/RU, плавные UI-переходы и резервную SVG-анимацию.
 
 **Технологии:** HTML5, CSS3, JavaScript, SVG, Lively Mascot (MIT), GitHub Actions, SSH/rsync.
 
@@ -47,7 +47,7 @@
 
 Built a responsive frontend demo featuring animated mascot characters that react to user events and app states: idle, searching, success, empty results, and errors.
 
-Implemented character switching, click/touch reactions with speech bubbles, a simulated asynchronous dictionary lookup, EN/RU language switching, smooth transitions, and an SVG fallback when third-party assets are unavailable.
+Implemented character switching, click/touch reactions with speech bubbles, a simulated asynchronous dictionary lookup, EN/UA/RU language switching, smooth transitions, and an SVG fallback when third-party assets are unavailable.
 
 **Stack:** HTML5, CSS3, vanilla JavaScript, SVG, MIT-licensed Lively Mascot, GitHub Actions, SSH/rsync deployment.
 
