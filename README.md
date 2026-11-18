@@ -21,9 +21,11 @@ MILO shows how animated characters can respond to real interface events rather t
 | Interactive characters | Sprout, Robot, Cat |
 | Click / touch | Character reactions and contextual speech bubbles |
 | Dictionary playground | Simulated async lookup with success, empty result, and error cases |
-| Languages | English / Russian |
+| Languages | English / Ukrainian / Russian (EN / UA / RU) |
 | Responsive UI | Desktop and mobile |
 | Graceful fallback | Built-in SVG animation if the remote mascot engine is unavailable |
+
+**Language switcher:** the current language is displayed first. When English or Russian is selected, Ukrainian (UA) is shown second; when Ukrainian is selected, it moves to first place. The interface, mascot phrases and demo dictionary labels all follow the selected language.
 
 **Try it:** open the [playground](https://milo-interactive-mascot.free-logistic-helper.com/#playground) and search for `hello`, `sun`, or `friend`. Use `unknown` for an empty response and `error` for an error state; change characters and tap a mascot to explore additional reactions.
 
