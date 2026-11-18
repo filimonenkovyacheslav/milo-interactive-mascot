@@ -17,12 +17,44 @@
       feature2title:'Watch it react',feature2text:"The character's emotion follows interface state — with no full-page reloads.",
       feature3title:'Make it yours',feature3text:'Switch characters, click for reactions, or call state changes directly from JavaScript.',
       creditOverline:'OPEN SOURCE, CLEAR LICENSE', creditsTitle:'Built with care.<br>Shared with credit.',creditsDescription:'The live animated mascot assets use the MIT-licensed Lively Mascot project. The page, interaction flow, dictionary simulation, and fallback artwork are original demo work.',viewLibrary:'View mascot library ↗',footerLabel:'Interactive Mascot Demo',footerInfo:'A standalone portfolio concept · Vanilla JavaScript · SVG animation',backTop:'Back to top ↑',
+      stickerTitle:'DESIGNED TO<br>FEEL ALIVE',stampMadeWith:'MADE WITH',stampOpenSource:'+ OPEN SOURCE',
+      characterSprout:'Sprout',characterRobot:'Robot',characterCat:'Cat',
+      resetText:'Reset demo',interactAria:'Interact with mascot',interactTitle:'Click me!',languageAria:'Interface language',
+      pageTitle:'MILO — Interactive Mascot / Frontend Portfolio Demo',pageDescription:'MILO — an interactive mascot playground. Explore animated character states, contextual reactions, and a responsive dictionary demo.',
+      quickWords:[['hello','hello'],['sun','sun'],['unknown','unknown'],['error','error']],
       placeholder:"Try ‘hello’, ‘sun’, or ‘friend’",searchNames:['Idle','Thinking','Happy','Confused','Oops!'],
       states:['IDLE','THINKING','HAPPY','CONFUSED','ERROR'],
       speeches:{idle:['Hey there! Ready to explore?','Hi! Tell me a word.'],searching:['Hmm, let me think…','Searching my tiny brain…'],success:['I found it! ✦','Yay! Another word learned!'],empty:["I couldn't find that one…",'That word is a mystery to me!'],error:['Oops! Something went wrong.','My circuits need a tiny break!']},
       clicks:['Oh, hello there! 👋','Hehe, that tickles! ✦','You found my secret smile!'],
       results:{idle:['WAITING FOR INPUT','Your next discovery starts here.'],searching:['SEARCHING','Looking through the demo dictionary…'],success:['TRANSLATION FOUND','Example: hello → привет'],empty:['NO MATCH','No translation in the mini dictionary.'],error:['SIMULATED ERROR','A network issue was simulated. Try again.']},
       searchEvent:'dictionary.search', clickEvent:'mascot.click', characterEvent:'mascot.switch', stateEvent:'mascot.setEmotion', errorEvent:'dictionary.error',
+    },
+    uk: {
+      brandLabel:'Лабораторія взаємодії',howNav:'Як це працює',creditsNav:'Авторство',eyebrow:'ІНТЕРАКТИВНИЙ FRONTEND-ЕКСПЕРИМЕНТ',
+      heroTitle:'Маленький герой.<br><span class="highlight-word">Великі емоції<span class="highlight-star">✳</span></span>',
+      heroDescription:'Знайомся з персонажем, який думає, радіє, дивується та реагує на дотики. Його поведінка змінюється відповідно до дій в інтерфейсі.',
+      exploreBtn:'Спробувати демо <span aria-hidden="true">↗</span>',noLogin:'Без реєстрації та сервера. Лише взаємодія.',
+      metricStates:'станів',metricCharacters:'персонажі',metricBrowser:'у браузері',
+      playgroundOverline:'ІНТЕРАКТИВНЕ ДЕМО',playgroundTitle:'Спробуй сам <span class="outline-spark">✳</span>',liveDemo:'ІНТЕРАКТИВНА ДЕМОНСТРАЦІЯ',readyTag:'готово',stageHint:'↑ натисни на персонажа',chooseCharacter:'ОБЕРИ ПЕРСОНАЖА',
+      interactionLab:'ЛАБОРАТОРІЯ РЕАКЦІЙ',panelTitle:'Що будемо шукати?',panelDescription:'Спробуй мінісловник або самостійно перемкни емоцію.',
+      searchLabel:'ЗНАЙТИ СЛОВО',searchBtn:'Знайти <span aria-hidden="true">↗</span>',quickTry:'Приклади',triggerLabel:'ОБЕРИ СТАН',instantPreview:'миттєвий перегляд',eventMonitor:'Монітор подій',
+      behindScenes:'ЯК ЦЕ ПРАЦЮЄ',howTitle:'Маленькі деталі. <em>Справжні емоції.</em>',howSubtitle:'Компактне демо анімації персонажа, керованої подіями інтерфейсу.',
+      feature1title:'Введи слово',feature1text:'Мінісловник зі станами завантаження, успіху, відсутності результату та імітацією помилки.',
+      feature2title:'Спостерігай за реакцією',feature2text:'Емоція персонажа залежить від стану інтерфейсу — без перезавантаження сторінки.',
+      feature3title:'Керуй сам',feature3text:'Змінюй персонажів, натискай на них або перемикай емоції через JavaScript.',
+      creditOverline:'ВІДКРИТИЙ КОД І ПРОЗОРА ЛІЦЕНЗІЯ',creditsTitle:'Створено з турботою.<br>І повагою до авторів.',creditsDescription:'Готові анімовані персонажі використовують бібліотеку Lively Mascot із ліцензією MIT. Дизайн сторінки, сценарії взаємодії, імітація словника та резервна SVG-графіка створені для цього демо.',viewLibrary:'Переглянути бібліотеку персонажів ↗',
+      footerLabel:'Демо інтерактивних персонажів',footerInfo:'Самостійний проєкт для портфоліо · Vanilla JavaScript · SVG-анімація',backTop:'Нагору ↑',
+      stickerTitle:'СТВОРЕНО,<br>ЩОБ ОЖИВАТИ',stampMadeWith:'ЗРОБЛЕНО З',stampOpenSource:'+ ВІДКРИТИЙ КОД',
+      characterSprout:'Паросток',characterRobot:'Робот',characterCat:'Кіт',
+      resetText:'Скинути демо',interactAria:'Взаємодіяти з персонажем',interactTitle:'Натисни на мене!',languageAria:'Мова інтерфейсу',
+      pageTitle:'MILO — інтерактивні персонажі / Frontend-демо',pageDescription:'MILO — інтерактивне демо з анімованими персонажами, реакціями на події інтерфейсу та мінісловником.',
+      placeholder:'Спробуй «привіт», «сонце» або «друг»',searchNames:['Спокій','Думає','Радість','Розгублений','Помилка'],
+      states:['СПОКІЙ','ДУМАЄ','РАДІЄ','НЕ ЗНАЙДЕНО','ПОМИЛКА'],
+      speeches:{idle:['Привіт! Готовий шукати слова?','Вітаю! Яке слово знайдемо?'],searching:['Хм, дай подумати…','Шукаю у своєму маленькому словнику…'],success:['Ура, знайшов! ✦','Чудово! Ще одне слово вивчено!'],empty:['Такого слова поки немає…','Цікаво! Треба буде його вивчити.'],error:['Ой! Щось пішло не так.','Мені потрібна коротка перерва!']},
+      clicks:['Привіт-привіт! 👋','Хі-хі! Лоскотно! ✦','Ти знайшов мою таємну усмішку!'],
+      results:{idle:['ОЧІКУЮ ЗАПИТУ','Твоє наступне відкриття вже близько.'],searching:['ШУКАЮ','Шукаю в демонстраційному словнику…'],success:['ПЕРЕКЛАД ЗНАЙДЕНО','Приклад: привіт → hello'],empty:['ЗБІГІВ НЕМАЄ','Цього слова немає в мінісловнику.'],error:['ІМІТАЦІЯ ПОМИЛКИ','Це тестова мережева помилка. Спробуй ще раз.']},
+      quickWords:[['привіт','привіт'],['сонце','сонце'],['невідоме','невідоме'],['помилка','помилка']],
+      searchEvent:'dictionary.search',clickEvent:'mascot.click',characterEvent:'mascot.switch',stateEvent:'mascot.setEmotion',errorEvent:'dictionary.error'
     },
     ru: {
       brandLabel:'Лаборатория интерактивности',howNav:'Как это устроено',creditsNav:'Лицензии',eyebrow:'ИНТЕРАКТИВНЫЙ FRONTEND-ЭКСПЕРИМЕНТ',
@@ -38,6 +70,11 @@
       feature2title:'Смотри на реакцию',feature2text:'Эмоция персонажа зависит от состояния интерфейса — без перезагрузки страницы.',
       feature3title:'Управляй сам',feature3text:'Меняй персонажей, нажимай на них или переключай эмоции через JavaScript.',
       creditOverline:'OPEN SOURCE И ПРОЗРАЧНАЯ ЛИЦЕНЗИЯ',creditsTitle:'Сделано с заботой.<br>С уважением к авторам.',creditsDescription:'Готовые анимированные маскоты взяты из проекта Lively Mascot под лицензией MIT. Дизайн страницы, сценарии реакций, мини-словарь и резервная SVG-графика созданы для этого демо.',viewLibrary:'Открыть библиотеку маскотов ↗',footerLabel:'Демо интерактивного маскота',footerInfo:'Самостоятельный проект для портфолио · Vanilla JavaScript · SVG-анимация',backTop:'Наверх ↑',
+      stickerTitle:'СОЗДАНО,<br>ЧТОБЫ ОЖИВАТЬ',stampMadeWith:'СДЕЛАНО С',stampOpenSource:'+ ОТКРЫТЫЙ КОД',
+      characterSprout:'Росток',characterRobot:'Робот',characterCat:'Кот',
+      resetText:'Сбросить демо',interactAria:'Взаимодействовать с персонажем',interactTitle:'Нажми на меня!',languageAria:'Язык интерфейса',
+      pageTitle:'MILO — интерактивные персонажи / Frontend-демо',pageDescription:'MILO — интерактивное демо с анимированными персонажами, реакциями на события интерфейса и мини-словарём.',
+      quickWords:[['привет','привет'],['солнце','солнце'],['неизвестно','неизвестно'],['ошибка','ошибка']],
       placeholder:'Попробуй «привет», «солнце», «друг»',searchNames:['Покой','Думает','Радость','Смущение','Ошибка'],
       states:['ПОКОЙ','ДУМАЕТ','РАДУЕТСЯ','НЕ НАЙДЕНО','ОШИБКА'],
       speeches:{idle:['Привет! Давай искать слова!','У меня есть идея!'],searching:['Хм, дай подумать…','Ищу в своём маленьком словаре…'],success:['Ура, я нашёл! ✦','Вот это находка!'],empty:['Этого слова пока нет…','Хм, надо будет выучить!'],error:['Ой! Что-то пошло не так.','Мне нужен короткий перерыв!']},
@@ -48,16 +85,16 @@
   };
 
   const translations = {
-    hello:{en:'hello → привет',ru:'привет → hello'},
-    sun:{en:'sun → солнце',ru:'солнце → sun'},
-    friend:{en:'friend → друг',ru:'друг → friend'},
-    water:{en:'water → вода',ru:'вода → water'},
-    home:{en:'home → дом',ru:'дом → home'}
+    hello:{en:'hello → привет',uk:'привіт → hello',ru:'привет → hello'},
+    sun:{en:'sun → солнце',uk:'сонце → sun',ru:'солнце → sun'},
+    friend:{en:'friend → друг',uk:'друг → friend',ru:'друг → friend'},
+    water:{en:'water → вода',uk:'вода → water',ru:'вода → water'},
+    home:{en:'home → дом',uk:'дім → home',ru:'дом → home'}
   };
   const aliases = {
-    hello:'hello',hi:'hello','привет':'hello','здравствуй':'hello',
-    sun:'sun','солнце':'sun',friend:'friend','друг':'friend',
-    water:'water','вода':'water',home:'home','дом':'home'
+    hello:'hello',hi:'hello','привет':'hello','здравствуй':'hello','привіт':'hello','вітаю':'hello',
+    sun:'sun','солнце':'sun','сонце':'sun',friend:'friend','друг':'friend',
+    water:'water','вода':'water',home:'home','дом':'home','дім':'home'
   };
   const stateOrder = ['idle','searching','success','empty','error'];
   const el = id => document.getElementById(id);
@@ -137,7 +174,7 @@
       if(seq!==state.querySeq)return;
       ui.searchButton.disabled=false;
       const lower=query.toLocaleLowerCase();
-      if(['error','ошибка','500'].includes(lower)) {
+      if(['error','ошибка','помилка','500'].includes(lower)) {
         state.lookup={kind:'error',value:''};setEmotion('error');setResult('error');trace(tr().errorEvent,'simulated');return;
       }
       const key=aliases[lower];
@@ -191,13 +228,34 @@
     trace(tr().characterEvent,type);
   }
   function changeLanguage(lang) {
+    if (!text[lang]) return;
     state.lang=lang;
     document.documentElement.lang=lang;
+    document.title=tr().pageTitle;
+    document.querySelector('meta[name="description"]').content=tr().pageDescription;
     document.querySelectorAll('[data-i18n]').forEach(node=>{const val=tr()[node.dataset.i18n];if(val!==undefined){if(/<[a-z]/i.test(val))node.innerHTML=val;else node.textContent=val;}});
     document.querySelectorAll('[data-i18n-html]').forEach(node=>{const val=tr()[node.dataset.i18nHtml];if(val!==undefined)node.innerHTML=val;});
+    document.querySelectorAll('[data-i18n-aria]').forEach(node=>{const val=tr()[node.dataset.i18nAria];if(val!==undefined)node.setAttribute('aria-label',val);});
+    document.querySelectorAll('[data-i18n-title]').forEach(node=>{const val=tr()[node.dataset.i18nTitle];if(val!==undefined)node.title=val;});
     ui.input.placeholder=tr().placeholder;
     document.querySelectorAll('.state-button').forEach((btn,i)=>btn.querySelector('b').textContent=tr().searchNames[i]);
-    document.querySelectorAll('.lang-btn').forEach(btn=>{const yes=btn.dataset.lang===lang;btn.classList.toggle('is-active',yes);btn.setAttribute('aria-pressed',String(yes));});
+    document.querySelectorAll('.suggestions [data-word]').forEach((btn,i)=>{
+      const [word,label]=tr().quickWords[i];
+      btn.dataset.word=word;
+      btn.textContent=label;
+    });
+    // Selected language first; Ukrainian second whenever a different language is selected.
+    const switcher=document.querySelector('.language-switch');
+    const languageOrder=lang==='uk' ? ['uk','en','ru'] : [lang,'uk',...['en','ru'].filter(code=>code!==lang)];
+    languageOrder.forEach(code=>{
+      const btn=switcher.querySelector('[data-lang="'+code+'"]');
+      if(btn) {
+        const active=code===lang;
+        btn.classList.toggle('is-active',active);
+        btn.setAttribute('aria-pressed',String(active));
+        switcher.appendChild(btn);
+      }
+    });
     ui.stateName.textContent=tr().states[stateOrder.indexOf(state.emotion)];
     playSpeech(tr().speeches[state.emotion][0]);
     if(state.lookup?.kind==='success')setResult('success',translations[state.lookup.key][state.lang]);
@@ -227,5 +285,6 @@
   }
   wireEvents();
   setEmotion('idle');setResult('idle');
+  changeLanguage('en');
   loadOpenSourceAssets();
 })();
